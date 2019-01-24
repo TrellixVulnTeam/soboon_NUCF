@@ -1,0 +1,44 @@
+{% extends 'blog/base.html' %}
+{% load static from staticfiles %}
+
+<!-- @import url('https://fonts.googleapis.com/css?family=Lobster'); -->
+{% block content %}
+
+
+<div class="container-fluid p-0">
+    <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+        <div class="my-auto">
+          <h2 class="mb-5">news</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5 col-8">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0"> upload multiple images with the title and content  </h3>
+             
+              <p class="text-primary">Title 최대 200자, 이미지는 3장 이내 </p>
+          
+              <div class="subheading mb-3">
+               </div>
+
+               <form id="post_form" method="post" action="" style="margin: 0 20% 0 20%;padding: 10px;" enctype="multipart/form-data">
+   
+      {% csrf_token %}
+      {{ form.as_p }}
+      <ul  class="imgli"><li>{{ formset.as_table }}</li></ul>
+   
+    <br><br>
+          <input type="submit" name="submit" value="Submit" />
+              </form>
+               
+            </div>
+          
+          </div>
+
+ 
+
+        </div>
+      </section>
+  </div>
+	
+{% endblock %}

@@ -1,0 +1,191 @@
+{% extends 'blog/base.html' %}
+{% load static from staticfiles %}
+
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+{% block content %}
+
+
+ <div class="container-fluid p-0">
+    <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+        <div class="my-auto">
+        <!--   <h2 class="mb-5">about</h2> -->
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">so-boon</h3>
+              <div class="subheading mb-3">
+               </div>
+               <a href="#"><img src="{% static 'img/pro4.png' %}" alt="" /></a>
+              <div> 소분은 Healing과 사랑을 위한 디자인, 여유로운 삶을 제안합니다.</div>
+              <p>GPA: 3.23</p>
+            </div>
+            <div class="resume-date text-md-right">
+                <div class="subheading mb-3">서비스 </div>
+          <ul class="fa-ul mb-0">
+            <li>
+              3D 모델링
+              </li>
+            <li>
+             
+              3D 프린팅</li>
+            <li>
+             
+              3D 시제품</li>
+            <li>
+             
+              3D 후가공</li>
+          </ul>
+              <span class="text-primary">
+              <a href="{% url 'gallery' %}">
+              EXPLORE</a></span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">3D 프린팅 WORKFLOW</h3>
+              <div class="subheading mb-3">모델링에서 후가공까지 원스톱 서비스  </div>
+                <div class="card-deck m-b-1">
+               <div class="card">
+                    <div class="card-block">
+                          <img alt="Card image cap" class="card-img-top" src=
+        "{% static 'img/work1.png' %}">
+                        <h5 class="card-title pt-3">모델링</h5>
+                        <p class="card-text">
+                           3D 디자인 <br />
+                             STL 또는 OBJ files<br />
+                            
+                        </p>
+                    </div>
+                   </div>
+
+                <div class="card">
+                    <div class="card-block">
+                          <img alt="Card image cap" class="card-img-top" src=
+        "{% static 'img/work2.png' %}">
+                        <h5 class="card-title pt-3">3D 프린팅</h5>
+                        <p class="card-text">
+                            Material Selection & Printer Settings
+                        </p>
+                    </div>
+                   </div>
+
+                <div class="card">
+                    <div class="card-block">
+                          <img alt="Card image cap" class="card-img-top" src=
+        "{% static 'img/work3.png' %}">
+                        <h4 class="card-title pt-3">prototype</h4>
+                        <p class="card-text">
+                            View and manage object
+                        </p>
+                    </div>
+                  </div>
+
+                 <div class="card">
+                    <div class="card-block">
+                          <img alt="Card image cap" class="card-img-top" src=
+        "{% static 'img/work4.png' %}">
+                        <h4 class="card-title pt-3">완성</h4>
+                        <p class="card-text">
+                            Idea = Reality
+                        </p>
+                    </div>
+                  </div>
+              </div>
+             
+           <p>GPA: 3.56</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Design Your Own Ideas</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="">
+        <div class="my-auto">
+        
+           <h3 class="mb-0">견적 / 문의 </h3>
+              <div class="subheading mb-3"></div>
+           
+             
+              <div class="row bg-light pt-3 pb-3 mb-4">
+                  <div class="col-lg-12">
+                    <h6>ADDRESS :</h6>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                      창원시 의창구,
+                        국립 창원대학교로 20,
+                        동백관 4층.                          
+                  </div>
+                  <div class="col-lg-6 col-12">
+                  <p class="m-0 text-danger"><i class="fa fa-phone-square" aria-hidden="true"></i>
+                      010 - 4722 - 5558
+                  </p>
+                  <p class="m-0 text-info"><i class="fa fa-envelope" aria-hidden="true"></i>
+                      minhoon0116@naver.com
+                  </p>
+                  </div>
+                
+              </div>
+              <div class="row bg-light pt-3 pb-3 mb-4">
+                  <div class="col-lg-6 col-12">
+                    <form>
+                      <div class="form-row mb-3">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Name :">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Company :">
+                        </div>
+                      </div>
+                      <div class="form-row mb-3">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Email :">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Mobile :">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message :"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-danger mb-4">Send</button>
+                    </form>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div id="googleMap" style="width:100%;height:400px;"></div>
+
+<script>
+function myMap() {
+var mapProp= {
+  center:new google.maps.LatLng(51.508742,-0.120850),
+  zoom:5,
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+                     
+                     
+                  </div>
+              </div>
+         
+         
+         
+        </div>
+      </section>
+
+      <hr class="m-0">
+</div>
+    
+	
+
+ {% endblock  %} 
+
