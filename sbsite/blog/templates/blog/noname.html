@@ -1,0 +1,30 @@
+<header class="masthead">
+      <div class="container h-100">
+        <div class="row">
+               {% for post in post_list %}
+          <div class="col-lg-7">
+               <div class="embed-responsive embed-responsive-16by9" >
+                 {{ post.content2|safe }}
+           
+              </div>
+             
+          
+              <!--  <div class="videoWrapper">
+               </div> -->
+          </div>
+          <div class="col-lg-5 my-auto">
+            <div class="device-container">
+             <a href="{% url 'post_detail' pk=post.pk %}">
+               <!-- {{ post.title }}</a>  -->
+        
+               <p> {{ post.content|safe }}</p>
+               <!-- <p>{{ post.published_date }}</p> -->
+           </a>
+               
+                </div>
+              </div>
+             {% endfor %}
+            </div>
+          </div>
+      
+    </header>

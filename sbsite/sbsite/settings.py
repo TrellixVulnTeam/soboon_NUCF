@@ -38,8 +38,30 @@ INSTALLED_APPS = [
     'django.contrib.messages', 
     'django.contrib.staticfiles',
     'blog',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
-
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        # 'height':300,
+        'toolbar_Custom': [
+            ['Styles', 'Format', 'Bold', 'Italic',  'Undo', 'Redo'],
+            ['Image', 'Table', 'HorizontalRule'],
+            ['TextColor', 'BGColor'],
+            
+        ],
+    },
+        
+    'special': {
+        'toolbar': 'Special',
+        'toolbar_Special': [
+            ['Youtube'],
+        ],
+        'extraPlugins': ','.join(['youtube']),
+    }
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

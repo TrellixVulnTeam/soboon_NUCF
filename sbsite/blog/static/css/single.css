@@ -1,0 +1,44 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
+}
+
+
+a {
+  color: #fdcc52;
+  -webkit-transition: all .35s;
+  transition: all .35s;
+}
+
+a:hover, a:focus {
+  color: #fcbd20;
+}
+
+header.masthead {
+  position: relative;
+  width: 100%;
+  height:100%;
+  display:block;
+  padding-top: px;
+  padding-bottom:px;
+  color: white;
+  background: url(""), -webkit-gradient(linear, right top, left top, from(#7b4397), to(#dc2430));
+  background: url(""), linear-gradient(to left, #7b4397, #dc2430);
+}
+
+
+@media (min-width: 992px) {
+  header.masthead {
+    height: 100%;
+    padding-top:0px;
+    padding-bottom:0px;
+  }
+  
+}
+
+

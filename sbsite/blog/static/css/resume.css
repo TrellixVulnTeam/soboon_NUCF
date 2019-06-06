@@ -7,12 +7,12 @@
 body {
   font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   padding-top: 54px;
-  color: #868e96;
+  color: #000;
 }
 
 @media (min-width: 992px) {
   body {
-    padding-top: 0;
+    padding-top: 24px;
     padding-left: 17rem;
   }
 }
@@ -110,51 +110,16 @@ p.lead {
     height: 100vh;
     color: #000000;
   }
-  #sideNav .navbar-brand {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin: auto auto 0;
-    padding: 0.5rem;
-  }
-  #sideNav .navbar-brand .img-profile {
-    max-width: 10rem;
-    max-height: 10rem;
-    /*border: 0.5rem solid rgba(255, 255, 255, 0.2);*/
-  }
-  #sideNav .navbar-collapse {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    -webkit-box-flex: 0;
-    -ms-flex-positive: 0;
-    flex-grow: 0;
-    width: 100%;
-    margin-bottom: auto;
-  }
-  #sideNav .navbar-collapse .navbar-nav {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    width: 100%;
-  }
-  #sideNav .navbar-collapse .navbar-nav .nav-item {
-    display: block;
-  }
-  #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
-    display: block;
-  }
-}
+ 
 
 section.resume-section {
   padding-top: 5rem !important;
+  padding-top: 5rem !important;
   padding-bottom: 5rem !important;
-  max-width: 75rem;
+  /*max-width: 75rem;*/
+  width: 100%;
 }
+
 
 section.resume-section .resume-item .resume-date {
   min-width: none;
@@ -165,7 +130,8 @@ section.resume-section .resume-item .resume-date {
     min-height: 100vh;
   }
   section.resume-section .resume-item .resume-date {
-    min-width: 18rem;
+   /* min-width: 18rem;*/
+
   }
 }
 
@@ -195,66 +161,5 @@ a:hover, a:focus, a:active {
 }
 
 
-  /* Make the image fully responsive */
-.carousel-inner img {
-      width: 100%;
-      height: 100%;
-  }
-  /* Make the image formsetvertical */
-ul.imgli {
-  list-style-type: none;
-  
  
-}
 
-.creative-content {
-     font-family: 'Open Sans', sans-serif;
-     min-height:100vh;
-     padding:50px 0;
-     overflow:hidden;
-}
- .creative-content .img-box {
-     padding:40px 20px;
-     position:relative;
-}
- .creative-content .img-box:before {
-     content:'';
-     position:absolute;
-     width:1000px;
-     left:-600px;
-     top:-550px;
-     height:1500px;
-     background:#f7f7fb;
-     border-radius:100%;
-     z-index:-1 
-}
- .creative-content .img-box img {
-     width:100%;
-     max-width:300px;
-}
- .creative-content .content-box {
-     padding:40px 20px;
-}
- .creative-content .content-box h2 {
-     font-size:48px;
-     color:#504f61;
-}
- .creative-content .content-box h2 .font-weight-bold {
-     color:#494852 
-}
- .creative-content .content-box p {
-     font-size:20px;
-     color:#9c9ba5;
-}
- .creative-content .content-box .btn {
-     background:#474654;
-     border-color:#474654;
-}
- @media screen and (max-width:991px) {
-     .creative-content {
-         padding:20px 0;
-    }
-    /* .creative-content .img-box {
-         display:none;
-    }*/
-}

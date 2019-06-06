@@ -24,6 +24,7 @@ from blog import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('blog.urls')),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^login/$', views.user_login, name="user_login"),
     url(r'^logout/$', views.user_logout, name="user_logout"),
 ]

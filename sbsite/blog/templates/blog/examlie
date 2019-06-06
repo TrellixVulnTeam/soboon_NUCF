@@ -1,0 +1,166 @@
+
+
+
+
+<header>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <!-- Slide One - Set the background image for this slide in the line below -->
+      <div class="carousel-item active" style="">
+        <div class="carousel-caption d-none d-md-block">
+           <div id="jsi-flying-fish-container" class="fish fishh">
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide Two - Set the background image for this slide in the line below -->
+      <div class="carousel-item" style="background-image: url('https://source.unsplash.com/bF2vsubyHcQ/1920x1080')">
+        <div class="carousel-caption d-none d-md-block">
+          {% for post in post_list %}
+          <div class="container-fluid">
+            <div class="row">
+<div class="col-md-6 p-0 h-md-100">
+    <div class="d-md-flex align-items-center h-100 p-5 text-center justify-content-center">
+        <div class="pt-5 pb-5">
+            <a href="{% url 'post_detail' pk=post.pk %}">
+        {{ post.title }}
+           </a>  
+        {{ post.content|safe }}
+        </div>
+    </div>
+</div>
+
+<!-- Second Half -->
+
+<div class="col-md-6 p-0 h-md-100">
+  
+      {{ post.content2|safe }}
+   
+</div>
+</div>
+</div>
+{% endfor %}  
+         
+        </div>
+      </div>
+    </div>
+      <!-- Slide Three - Set the background image for this slide in the line below -->
+      
+    <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a> -->
+  </div>
+</header>
+
+
+ <div class="container-fluid">
+    
+    <div class="row">
+      {% for post in post_list %}
+      <div class="col">
+      <a href="{% url 'post_detail' pk=post.pk %}">
+        {{ post.title }}
+      </a>  
+      {{ post.content|safe }}
+      </div>
+      <div class="col"> {{ post.content2|safe }}</div>
+      {% endfor %}
+    </div>
+    <div class="row fish">
+      <div class="col" id="jsi-flying-fish-container"></div>
+    </div>
+ </div> 
+
+ <div class="row fish">
+        <div class="fishh" style="">
+          <div id="jsi-flying-fish-container">
+          </div>
+        </div>
+      </div>
+<div class="d-md-flex h-md-100 align-items-center">
+
+<!-- First Half -->
+{% for post in post_list %}
+<div class="col-md-6 p-0 h-md-100">
+    <div class="d-md-flex align-items-center h-100 p-5 text-center justify-content-center">
+        <div class="pt-5 pb-5">
+            <a href="{% url 'post_detail' pk=post.pk %}">
+        {{ post.title }}
+           </a>  
+        {{ post.content|safe }}
+        </div>
+    </div>
+</div>
+
+<!-- Second Half -->
+
+<div class="col-md-6 p-0 h-md-100">
+    <div class="">
+      {{ post.content2|safe }}
+    </div>
+</div>
+{% endfor %}    
+</div>
+
+
+<header class="masthead">
+ <div class="container-fluid" style="max-height:600px">
+      <div class="row no-gutters">
+          {% for post in post_list %}
+         <div class="col-lg-7 " style="">
+            
+           <div class="embed-responsive embed-responsive-16by9" >
+           {{ post.content2|safe }}
+           
+           </div>
+         </div>
+          
+
+         <div class="col-lg-5"  style="background-color: #0000ff; ">
+
+           <svg viewBox="0 0 600 250">
+                 <text x="20" y="170" text-anchor="start">
+                     <tspan id="l1">태</tspan>
+                     <tspan id="l2">화</tspan>
+                     <tspan id="l3">상</tspan>
+                     <tspan id="l4">회</tspan>
+                </text>
+           </svg>
+
+
+      
+                 {{ post.title }}
+                
+           <a href="{% url 'post_detail' pk=post.pk %}">
+              
+        
+               <p> {{ post.content|safe }}</p>
+               <!-- <p>{{ post.published_date }}</p> -->
+           </a>
+                </div>
+                {% endfor %}
+            </div>
+           </div>
+         
+        
+
+    <div class="container-fluid fish">
+      <div class="row" style="" >
+        <div class="col-lg-12 " style="">
+          <div id="jsi-flying-fish-container">
+          </div>
+        </div>
+      </div>
+    </div>
+ </header>
+   

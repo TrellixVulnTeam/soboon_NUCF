@@ -3,11 +3,12 @@ from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from django.urls import reverse
 from .models import Post, Images
-from .forms import PostForm, UserLoginForm, ImageForm
+# from .forms import PostForm, UserLoginForm, ImageForm forms에서 imageform지움>>
+from .forms import PostForm, UserLoginForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse, HttpResponseRedirect
-from django.forms import modelformset_factory
 
+# from django.forms import modelformset_factory
 # Create your views here.
 def post_list(request):
     post_list= Post.objects.all()
@@ -20,46 +21,46 @@ def post_detail(request, pk):
 def post_new(request):
 
     # ImageFormset = modelformset_factory(Images, field=('image',), extra=4)
-    ImageFormSet = modelformset_factory(Images, form=ImageForm, extra=3,)
+    # ImageFormSet = modelformset_factory(Images, form=ImageForm, extra=3,)
     if request.method == "POST":
 
         form = PostForm(request.POST)
-        formset = ImageFormSet(request.POST or None, request.FILES or None)
+        # formset = ImageFormSet(request.POST or None, request.FILES or None)
 
-
-        if form.is_valid() and formset.is_valid():
+        # if form.is_valid() and formset.is_valid():
+        if form.is_valid() :
             post = form.save(commit=False)
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
 
             # for form in formset.cleaned_data:
-            #     try:
-            #         image = form['image']
-            #         photo = Images(post=post_form, image=image)
-            #         photo.save()
-            #         return redirect('post_list')
+            #      try:
+            #          image = form['image']
+            #          photo = Images(post=post_form, image=image)
+            #          photo.save()
+            #          return redirect('post_list')
                 
-            #     except Exception as e:
-            #         pass
-            # return redirect('post_detail', pk=post.pk)
+            #      except Exception as e:
+            #          pass
+            return redirect('post_detail', pk=post.pk)
             
-            for f in formset:
-                try:
+            # for f in formset:
+            #     try:
                     
-                    photo = Images(post=post, image=f.cleaned_data['image'])
-                    photo.save()
+            #         photo = Images(post=post, image=f.cleaned_data['image'])
+            #         photo.save()
                    
                 
-                except Exception as e:
-                    break
-            return redirect('post_detail', pk=post.pk)
+            #     except Exception as e:
+            #         break
+            # return redirect('post_detail', pk=post.pk)
 
     else:
         form = PostForm()
-        formset = ImageFormSet(queryset=Images.objects.none())
-    return render(request, 'blog/post_edit.html', {'form': form, 'formset':formset,})
-
+        # formset = ImageFormSet(queryset=Images.objects.none())
+    return render(request, 'blog/post_edit.html', {'form': form,})
+    # return render(request, 'blog/post_edit.html', {'form': form, 'formset':formset,})
 
 
 def user_login(request):
@@ -93,10 +94,8 @@ def user_logout(request):
 
 
 
-def gallery(request):
+#def gallery(request):
     
-    return render(request,'blog/gallery.html')     
+#    return render(request,'blog/gallery.html')     
  
-def about(request):
-    
-    return render(request,'blog/about.html')         
+      
